@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Please rate your service</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <div class="container">
+        <img src="../static/ECF_logo.png" alt="ecf" class="logo">
+        {% if message %}
+        <p class="message">{{ message | safe}}</p>
+        {% endif %}
+        <form action="/submit" method="POST">
+            <div class="form-group">
+                <h3>Your Name</h3>
+                <input
+                  type="text"
+                  name="customer"
+                  placeholder="Name"
+                />
+              </div>
+              <div class="form-group">
+                <h3>Our Employee</h3>
+                <select name="employee">
+                  <option value="">Please Select</option>
+                  <option value="Brenda">Brenda</option>
+                  <option value="Karen">Karen</option>
+                  <option value="Heather">Heather</option>
+                  <option value="Sarah">Sarah</option>
+                  <option value="Jo">Jo</option>
+                  <option value="Lesley">Lesley</option>
+                  <option value="Catherine">Catherine</option>
+                  <option value="Jess">Jess</option>
+                  <option value="Chris">Chris</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <h3>Please rate your experience</h3>
+                <input type="radio" name="rating" value="1" checked /> 1
+                <input type="radio" name="rating" value="2" /> 2
+                <input type="radio" name="rating" value="3" /> 3
+                <input type="radio" name="rating" value="4" /> 4
+                <input type="radio" name="rating" value="5" /> 5
+                <input type="radio" name="rating" value="6" /> 6
+                <input type="radio" name="rating" value="7" /> 7
+                <input type="radio" name="rating" value="8" /> 8
+                <input type="radio" name="rating" value="9" /> 9
+                <input type="radio" name="rating" value="10"/> 10
+              </div>
+              <div class="form-group">
+                <h3>Comments about your experience</h3>
+                <textarea
+                  name="comments"
+                  id=""
+                  cols="30"
+                  rows="10"
+                  placeholder="Tell us what you liked and/or did not like"
+                ></textarea>
+              </div>
+              <input type="submit" value="Submit" class="btn" />
+            </form>
+        </form>
+    </div>
+</body>
+</html>
